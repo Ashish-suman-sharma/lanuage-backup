@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Time Display</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&family=Lato:wght@300&family=Martel+Sans&family=Nunito:wght@300;500;700&family=Open+Sans:wght@300&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&family=Roboto:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #current-time {
+            font-size: 200px;
+            color: white;
+            font-weight: normal;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="current-time"></div>
+
+    <script>
+        function updateTime() {
+            const currentTimeElement = document.getElementById('current-time');
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            let milliseconds = Math.floor(now.getMilliseconds() / 10).toString().padStart(2, '0');
+
+            const currentTimeString = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+            currentTimeElement.textContent = currentTimeString;
+        }
+
+        // Initial call to display the time immediately
+        updateTime();
+
+        // Update the time every second
+        setInterval(updateTime, 333);
+    </script>
+
+</body>
+
+</html>

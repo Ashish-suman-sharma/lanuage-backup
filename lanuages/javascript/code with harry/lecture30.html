@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>snake water gun game</h1>
+    <script>
+        let userScore = 0;
+        let computerScore = 0;
+
+        for(let i=0; i<10; i++){
+            let a = prompt("Round "+(i+1)+": enter your choice s, w, g");
+            let b = Math.floor(Math.random()*3);
+            if(b==0){
+                b = "s";
+            }
+            else if(b==1){
+                b = "w";
+            }
+            else{
+                b = "g";
+            }
+
+            document.write("Round "+(i+1)+": you choose "+a+" and computer choose "+b+"<br>");
+
+            if(a==b){
+                document.write("Round "+(i+1)+": game draw<br>");
+            }
+            else if(a=="s" && b=="w"){
+                document.write("Round "+(i+1)+": you win<br>");
+                userScore++;
+            }
+            else if(a=="s" && b=="g"){
+                document.write("Round "+(i+1)+": you lose<br>");
+                computerScore++;
+            }
+            else if(a=="w" && b=="s"){
+                document.write("Round "+(i+1)+": you lose<br>");
+                computerScore++;
+            }
+            else if(a=="w" && b=="g"){
+                document.write("Round "+(i+1)+": you win<br>");
+                userScore++;
+            }
+            else if(a=="g" && b=="s"){
+                document.write("Round "+(i+1)+": you win<br>");
+                userScore++;
+            }
+            else if(a=="g" && b=="w"){
+                document.write("Round "+(i+1)+": you lose<br>");
+                computerScore++;
+            }
+            else{
+                document.write("Round "+(i+1)+": invalid input<br>");
+            }
+        }
+
+        document.write("<br>Game over. Final score: You - "+userScore+", Computer - "+computerScore);
+    </script>
+</body>
+</html>

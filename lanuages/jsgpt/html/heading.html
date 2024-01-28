@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading"></h1>
+
+    <script>
+        function updateheading() {
+            var allheading = [
+                "heading1",
+                "heading2",
+                "heading3",
+                "heading4",
+                "heading5",
+            ];
+            var heads = document.getElementById("heading");
+            var currentindex = 0;
+
+            heads.textContent = allheading[currentindex];
+            currentindex++;
+
+            setInterval(function () {
+                if (currentindex == allheading.length) {
+                    currentindex = 0;
+                }
+                heads.textContent = allheading[currentindex];
+                currentindex++;
+            }, 3000)
+
+        }
+        window.onload = updateheading;
+
+    </script>
+</body>
+
+</html>

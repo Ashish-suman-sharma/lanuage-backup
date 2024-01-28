@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="para"></p>
+</body>
+<script>
+    function updatepara() {
+        var array = ["teri", "meri", "kahaani", "hai", "barishon", "ka", "paani",];
+        var para = document.getElementById("para");
+        var currentindex = 0;
+
+        para.textContent = array[currentindex];
+        currentindex++;
+
+        setInterval(function () {
+            para.textContent = array[currentindex];
+            currentindex++;
+
+            if (currentindex == array.length) {
+                currentindex = 0;
+            }
+        }, 3000)
+    }
+    window.onload = updatepara;
+</script>
+
+</html>

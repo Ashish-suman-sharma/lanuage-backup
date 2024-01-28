@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item list</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>add item</h1>
+            <input type="text" id="item">
+            <button onclick="additem()">add</button>
+        </div>
+        <div>
+            <h1>item list</h1>
+            <ul id="list">
+
+            </ul>
+            <button onclick="removeitem()">remove last item</button>
+
+        </div>
+
+    </div>
+
+    <script>
+        function additem() {
+            var item = document.getElementById('item');
+            var newitem = item.value.trim();
+
+            if (newitem !== '') {
+                var list = document.getElementById('list');
+                var newli = document.createElement('li');
+
+                newli.textContent = newitem;
+                list.appendChild(newli);
+                item.value = '';
+            }
+
+        }
+        function removeitem() {
+            var list = document.getElementById('list');
+            var lastitem = list.lastElementChild;
+            list.removeChild(lastitem);
+
+        }
+    </script>
+
+
+</body>
+
+</html>

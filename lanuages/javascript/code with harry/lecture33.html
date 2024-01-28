@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><div>
+        <div>frist</div>
+        <div>second</div>
+    </div>
+    <script>
+        console.log(document.body.firstChild)
+        let a = document.body.firstChild
+        console.log(a.nextSibling)
+        console.log(a.parentNode)
+        console.log(a.parentElement)
+
+        //difrrence between parentElement and parentNode is that parentElement will return null if the parent is not an element but parentNode will return the parent even if it is not an element . for example if the parent is a text node then parentElement will return null but parentNode will return the parent
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle paragraph by button</title>
+</head>
+
+<body>
+    <p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam eligendi fugit laborum vero in,
+        deserunt repellendus illo, ipsum quod fuga, maiores provident aut recusandae. Consequatur doloremque dicta
+        quibusdam, corrupti laudantium in corporis dolore, accusamus repellendus repudiandae cum repellat minus, quos
+        vero. Repellat voluptates, eaque ratione, cupiditate distinctio aliquam officiis sunt consequatur qui molestias
+        laudantium minus eum inventore earum eius? Dolorum ratione qui laborum ex? Eaque, inventore minima est
+        accusantium dignissimos, quia fuga atque tempora deleniti magni cum, recusandae iusto quo saepe at dicta!
+        Doloribus aperiam architecto sint necessitatibus, vero nisi reprehenderit quis itaque ipsum soluta ea iure ipsam
+        asperiores similique!</p>
+
+    <button id="btn">toggle</button>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var para = document.getElementById('para');
+
+        btn.addEventListener('click', function () {
+            if (para.style.display == "none") {
+                para.style.display = "block";
+            } else {
+                para.style.display = "none";
+            }
+        })
+    </script>
+</body>
+
+</html>
